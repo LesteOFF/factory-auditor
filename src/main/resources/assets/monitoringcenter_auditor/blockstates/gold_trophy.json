@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "monitoringcenter_auditor:block/gold_trophy"
+    },
+    "facing=east": {
+      "model": "monitoringcenter_auditor:block/gold_trophy",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "monitoringcenter_auditor:block/gold_trophy",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "monitoringcenter_auditor:block/gold_trophy",
+      "y": 270
+    }
+  }
+}

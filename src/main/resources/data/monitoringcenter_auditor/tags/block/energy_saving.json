@@ -1,0 +1,324 @@
+{
+  "values": [
+    {
+      "id": "mekanism:advanced_combining_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:advanced_compressing_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:advanced_crushing_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:advanced_enriching_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:advanced_infusing_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:advanced_injecting_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:advanced_purifying_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:advanced_sawing_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:advanced_smelting_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:antiprotonic_nucleosynthesizer",
+      "required": false
+    },
+    {
+      "id": "mekanism:basic_combining_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:basic_compressing_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:basic_crushing_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:basic_enriching_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:basic_infusing_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:basic_injecting_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:basic_purifying_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:basic_sawing_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:basic_smelting_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:chemical_crystallizer",
+      "required": false
+    },
+    {
+      "id": "mekanism:chemical_dissolution_chamber",
+      "required": false
+    },
+    {
+      "id": "mekanism:chemical_infuser",
+      "required": false
+    },
+    {
+      "id": "mekanism:chemical_injection_chamber",
+      "required": false
+    },
+    {
+      "id": "mekanism:chemical_oxidizer",
+      "required": false
+    },
+    {
+      "id": "mekanism:chemical_washer",
+      "required": false
+    },
+    {
+      "id": "mekanism:combiner",
+      "required": false
+    },
+    {
+      "id": "mekanism:crusher",
+      "required": false
+    },
+    {
+      "id": "mekanism:digital_miner",
+      "required": false
+    },
+    {
+      "id": "mekanism:electric_pump",
+      "required": false
+    },
+    {
+      "id": "mekanism:electrolytic_separator",
+      "required": false
+    },
+    {
+      "id": "mekanism:elite_combining_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:elite_compressing_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:elite_crushing_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:elite_enriching_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:elite_infusing_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:elite_injecting_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:elite_purifying_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:elite_sawing_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:elite_smelting_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:energized_smelter",
+      "required": false
+    },
+    {
+      "id": "mekanism:enrichment_chamber",
+      "required": false
+    },
+    {
+      "id": "mekanism:fluidic_plenisher",
+      "required": false
+    },
+    {
+      "id": "mekanism:formulaic_assemblicator",
+      "required": false
+    },
+    {
+      "id": "mekanism:isotopic_centrifuge",
+      "required": false
+    },
+    {
+      "id": "mekanism:metallurgic_infuser",
+      "required": false
+    },
+    {
+      "id": "mekanism:nutritional_liquifier",
+      "required": false
+    },
+    {
+      "id": "mekanism:osmium_compressor",
+      "required": false
+    },
+    {
+      "id": "mekanism:painting_machine",
+      "required": false
+    },
+    {
+      "id": "mekanism:pigment_extractor",
+      "required": false
+    },
+    {
+      "id": "mekanism:pigment_mixer",
+      "required": false
+    },
+    {
+      "id": "mekanism:precision_sawmill",
+      "required": false
+    },
+    {
+      "id": "mekanism:pressurized_reaction_chamber",
+      "required": false
+    },
+    {
+      "id": "mekanism:purification_chamber",
+      "required": false
+    },
+    {
+      "id": "mekanism:rotary_condensentrator",
+      "required": false
+    },
+    {
+      "id": "mekanism:seismic_vibrator",
+      "required": false
+    },
+    {
+      "id": "mekanism:ultimate_combining_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:ultimate_compressing_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:ultimate_crushing_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:ultimate_enriching_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:ultimate_infusing_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:ultimate_injecting_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:ultimate_purifying_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:ultimate_sawing_factory",
+      "required": false
+    },
+    {
+      "id": "mekanism:ultimate_smelting_factory",
+      "required": false
+    },
+    {
+      "id": "oritech:assembler_block",
+      "required": false
+    },
+    {
+      "id": "oritech:atomic_forge_block",
+      "required": false
+    },
+    {
+      "id": "oritech:centrifuge_block",
+      "required": false
+    },
+    {
+      "id": "oritech:cooler_block",
+      "required": false
+    },
+    {
+      "id": "oritech:deep_drill_block",
+      "required": false
+    },
+    {
+      "id": "oritech:destroyer_block",
+      "required": false
+    },
+    {
+      "id": "oritech:enchanter_block",
+      "required": false
+    },
+    {
+      "id": "oritech:fertilizer_block",
+      "required": false
+    },
+    {
+      "id": "oritech:foundry_block",
+      "required": false
+    },
+    {
+      "id": "oritech:fragment_forge_block",
+      "required": false
+    },
+    {
+      "id": "oritech:placer_block",
+      "required": false
+    },
+    {
+      "id": "oritech:powered_furnace_block",
+      "required": false
+    },
+    {
+      "id": "oritech:pulverizer_block",
+      "required": false
+    },
+    {
+      "id": "oritech:pump_block",
+      "required": false
+    },
+    {
+      "id": "oritech:refinery_block",
+      "required": false
+    },
+    {
+      "id": "oritech:tainted_refinery_block",
+      "required": false
+    }
+  ]
+}

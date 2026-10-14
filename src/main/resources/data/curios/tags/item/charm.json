@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "monitoringcenter_auditor:junior_diploma",
+      "required": false
+    },
+    {
+      "id": "monitoringcenter_auditor:senior_diploma",
+      "required": false
+    },
+    {
+      "id": "monitoringcenter_auditor:master_diploma",
+      "required": false
+    }
+  ]
+}

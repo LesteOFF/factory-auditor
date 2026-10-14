@@ -1,0 +1,8 @@
+{
+  "values": [
+    "monitoringcenter_auditor:auditor",
+    "monitoringcenter_auditor:plaque",
+    "monitoringcenter_auditor:bronze_trophy",
+    "monitoringcenter_auditor:gold_trophy"
+  ]
+}

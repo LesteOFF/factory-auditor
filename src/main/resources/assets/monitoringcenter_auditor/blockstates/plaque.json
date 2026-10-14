@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "monitoringcenter_auditor:block/plaque"
+    },
+    "facing=east": {
+      "model": "monitoringcenter_auditor:block/plaque",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "monitoringcenter_auditor:block/plaque",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "monitoringcenter_auditor:block/plaque",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "monitoringcenter_auditor:block/plaque",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "monitoringcenter_auditor:block/plaque",
+      "x": 90
+    }
+  }
+}

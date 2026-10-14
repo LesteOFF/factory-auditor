@@ -1,0 +1,13 @@
+{
+  "values": [
+    "minecraft:spawner",
+    "minecraft:trial_spawner",
+    "minecraft:vault",
+    "minecraft:beacon",
+    "minecraft:conduit",
+    "minecraft:end_gateway",
+    "minecraft:moving_piston",
+    "minecraft:sculk_shrieker",
+    "minecraft:sculk_catalyst"
+  ]
+}

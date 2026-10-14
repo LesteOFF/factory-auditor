@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "monitoringcenter_auditor:block/auditor_top",
+    "front": "monitoringcenter_auditor:block/auditor_front",
+    "side": "monitoringcenter_auditor:block/auditor_side"
+  }
+}

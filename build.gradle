@@ -1,0 +1,154 @@
+plugins {
+    id 'java-library'
+    id 'idea'
+    id 'net.neoforged.moddev' version "${moddev_version}"
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = mod_id
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+sourceSets {
+    packTest {
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
+}
+
+neoForge {
+    version = project.neo_version
+    addModdingDependenciesTo(sourceSets.test)
+    addModdingDependenciesTo(sourceSets.packTest)
+
+    parchment {
+        mappingsVersion = project.parchment_mappings_version
+        minecraftVersion = project.parchment_minecraft_version
+    }
+
+    runs {
+        client {
+            client()
+        }
+        server {
+            server()
+            programArgument '--nogui'
+        }
+        gameTestServer {
+            type = "gameTestServer"
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+        packGameTestServer {
+            type = "gameTestServer"
+            sourceSet = sourceSets.packTest
+            gameDirectory = file('run-pack')
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+        configureEach {
+            logLevel = org.slf4j.event.Level.INFO
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet(sourceSets.main)
+        }
+    }
+}
+
+def packJars = [
+        'Jade-1.21.1-NeoForge-15.10.6.jar',
+        'create-1.21.1-6.0.10.jar',
+        'curios-neoforge-9.5.1+1.21.1.jar'
+]
+
+def packTestJars = packJars + [
+        'Mekanism-1.21.1-10.7.19.85.jar',
+        'appliedenergistics2-19.2.18.jar',
+        'guideme-21.1.19.jar',
+        'oritech-neoforge-1.21.1-1.2.13.jar',
+        'architectury-13.0.11-neoforge.jar',
+        'athena-neoforge-1.21.1-4.0.6.jar',
+        'geckolib-neoforge-1.21.1-4.9.3.jar',
+        'ftb-teams-neoforge-2101.1.11.jar',
+        'ftb-library-neoforge-2101.1.37.jar'
+]
+
+def requirePackJars(List<String> jars) {
+    def missing = jars.findAll { !file("${pack_mods_dir}/${it}").exists() }
+    if (missing) {
+        throw new GradleException("Jars do pack ausentes em ${pack_mods_dir} (ajuste pack_mods_dir em gradle.properties): ${missing.join(', ')}")
+    }
+}
+
+requirePackJars(packJars)
+tasks.matching { it.name == 'runPackGameTestServer' }.configureEach { doFirst { requirePackJars(packTestJars) } }
+
+def copyCentral = tasks.register('copyCentral', Sync) {
+    from("${central_dir}/build/libs") {
+        include central_jar
+    }
+    into 'libs/central'
+}
+
+tasks.named('compileJava') {
+    dependsOn copyCentral
+    doFirst {
+        if (!file("libs/central/${central_jar}").exists()) {
+            throw new GradleException("Jar da Central ausente (${central_jar}): rode 'gradlew build' em ${central_dir} antes")
+        }
+    }
+}
+tasks.matching { it.name.startsWith('prepare') }.configureEach { dependsOn copyCentral }
+
+def packagingTasks = ['build', 'jar', 'assemble']
+def buildsJar = gradle.startParameter.taskNames.any { it.replaceFirst('^:', '') in packagingTasks }
+def stampedVersion = buildsJar ? "${mod_version}+${new Date().format('yyyyMMddHHmmss')}".toString() : mod_version
+
+dependencies {
+    compileOnly files(packJars.collect { "${pack_mods_dir}/${it}" })
+    compileOnly fileTree(dir: 'libs', include: '**/*.jar')
+    runtimeOnly fileTree(dir: 'libs/central', include: '*.jar')
+    packTestRuntimeOnly files(packTestJars.collect { "${pack_mods_dir}/${it}" })
+    packTestRuntimeOnly fileTree(dir: 'libs/central', include: '*.jar')
+    testImplementation "org.junit.jupiter:junit-jupiter:${junit_version}"
+    testImplementation 'com.google.code.gson:gson:2.10.1'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+sourceSets.test.java.srcDirs = ['test']
+
+test {
+    useJUnitPlatform()
+}
+
+var generateModMetadata = tasks.register('generateModMetadata', ProcessResources) {
+    var replaceProperties = [
+            minecraft_version      : minecraft_version,
+            minecraft_version_range: minecraft_version_range,
+            neo_version            : neo_version,
+            neo_version_range      : neo_version_range,
+            loader_version_range   : loader_version_range,
+            central_version_range  : central_version_range,
+            mod_id                 : mod_id,
+            mod_name               : mod_name,
+            mod_license            : mod_license,
+            mod_version            : stampedVersion,
+            mod_authors            : mod_authors,
+            mod_description        : mod_description
+    ]
+    inputs.properties replaceProperties
+    expand replaceProperties
+    from 'src/main/templates'
+    into 'build/generated/sources/modMetadata'
+}
+sourceSets.main.resources.srcDir generateModMetadata
+neoForge.ideSyncTask generateModMetadata
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
